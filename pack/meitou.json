@@ -2,7 +2,7 @@
   "id": "meitou.p2p.coop",
   "version": "0.1.0",
   "apiVersion": 2,
-  "gameVersion": "=0.20.0",
+  "gameVersion": ">=0.20.0 <=0.20.1",
   "dependencies": [
     {
       "id": "meitou.p2p",

@@ -6,4 +6,4 @@ The original provider and runtime descriptors, FCS header, original fixture data
 
 ## Stoat replay
 
-The replay shows two stock MeitouClient game windows displaying Kenshi assets. The CC0 dedication for original guides and data excludes the gameplay footage. Kenshi and MeitouClient retain their respective rights. The trial reads the player's own Kenshi installation. [Replay](docs/stoat-walk.gif)
+The replays show two stock MeitouClient game windows displaying Kenshi assets. The CC0 dedication for original guides and data excludes the gameplay footage. Kenshi and MeitouClient retain their respective rights. The trial reads the player's own Kenshi installation. [0.20.1 replay](docs/stoat-walk-0.20.1.gif) · [0.20.0 replay](docs/stoat-walk.gif)

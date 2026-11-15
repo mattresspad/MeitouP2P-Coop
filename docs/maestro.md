@@ -6,11 +6,13 @@ Co-op supplies a v1 provider action on FCS Character records. Maestro writes the
 
 On November 15, 2026, fresh sibling clones passed the role export test with Maestro `v0.1.0-playtest.1` at `4846237c`. The authoring probe loaded the tagged core and the 0.20.1 data reader. The two gameplay probes used the 0.20.0 reader. File digests matched the respective game installations.
 
-The saved FCS header contained `MeitouP2P-Coop.mod` as a dependency, and those exact bytes reached the ZIP. The JSON mapped the synthetic Character `1-p2p-test.base` to `stoat.scout` in pack `stoat`, with display label **Stoat Scout** and schema version 1. Both gameplay processes applied one role label. The guest read back **Stoat Scout** at host ticks 3 and 453. The separate earlier test used the Avalonia prototype.2 core. The public tag result covers authoring interoperability. The tested gameplay runtime remains 0.20.0. [Tagged Maestro source](https://github.com/mattresspad/MeitouMaestro/tree/4846237c0a9a6ac7a3a4c7c033957d5b58423cd3)
+The saved FCS header contained `MeitouP2P-Coop.mod` as a dependency, and those exact bytes reached the ZIP. The JSON mapped the synthetic Character `1-p2p-test.base` to `stoat.scout` in pack `stoat`, with display label **Stoat Scout** and schema version 1. Both gameplay processes applied one role label. The guest read back **Stoat Scout** at host ticks 3 and 453. The separate earlier test used the Avalonia prototype.2 core. [Tagged Maestro source](https://github.com/mattresspad/MeitouMaestro/tree/4846237c0a9a6ac7a3a4c7c033957d5b58423cd3)
+
+The 0.20.1 compatibility run repeated the tagged-core export and checked the dependency and JSON again. Both 0.20.1 processes loaded the exported pack. The guest observed **Stoat Scout** at X 30.00 on host tick 3 and X 399.44 on tick 453. The visible two-window walk uses its own named fixture. [Windowed results](stoat-results.md)
 
 ## Reproduce the tagged-core check
 
-Use sibling checkouts named `MeitouP2P`, `MeitouP2P-Coop` and `MeitouMaestro`. From the connector checkout, build both mods against stock Windows 0.20.0 as described in the connector README. Set `MEITOU_0201_DIR` to the extracted 0.20.1 folder containing `Meitou.Data.dll`. Build the tagged core and a separate authoring probe with those readers.
+Use sibling checkouts named `MeitouP2P`, `MeitouP2P-Coop` and `MeitouMaestro`. From the connector checkout, build both mods against the Windows release you want to test. Set `MEITOU_0201_DIR` to the extracted 0.20.1 folder containing `Meitou.Data.dll`. Build the tagged core and a separate authoring probe with those readers.
 
 ```powershell
 git clone --branch v0.1.0-playtest.1 --depth 1 https://github.com/mattresspad/MeitouMaestro.git ../MeitouMaestro
@@ -20,7 +22,7 @@ dotnet build tools/Probe/Probe.csproj -c Release "-p:MeitouDir=$env:MEITOU_0201_
 python tools/smoke.py --maestro artifacts/maestro-author/Probe.dll
 ```
 
-The authoring process reviews, saves and exports a Stoat Scout role. The smoke test checks the FCS dependency and JSON fields, installs the exported pack, and reads the authored label back through two 0.20.0 loader processes. The fixture uses original synthetic data. This check exercises Maestro's authoring core. The visible Stoat replay tests the 0.20.0 runtime. [Connector build](https://github.com/mattresspad/MeitouP2P#build-and-test-with-co-op)
+The authoring process reviews, saves and exports a Stoat Scout role. The smoke test checks the FCS dependency and JSON fields, installs the exported pack, and reads the authored label back through two gameplay loaders for the selected release. The fixture uses original synthetic data. [Connector build](https://github.com/mattresspad/MeitouP2P#build-and-test-with-co-op)
 
 ## Handoff for Husbandry and Dialogue
 

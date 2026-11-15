@@ -8,7 +8,7 @@ using Meitou.Simulation;
 
 namespace MeitouP2P.Coop;
 
-// The 0.20.0 fixture has exactly one player character of each of these templates.
+// The Stoat fixture has exactly one player character of each of these templates.
 internal sealed class StoatWalkTrial : IUiExtension
 {
     internal const string ScoutRecord = "1-Stoat Walk.mod";
